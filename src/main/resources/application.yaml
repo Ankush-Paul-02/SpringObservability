@@ -7,7 +7,12 @@ management:
     web:
       exposure:
 #        include: health, prometheus
-        include: health
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+
   otlp:
     metrics:
       export:
