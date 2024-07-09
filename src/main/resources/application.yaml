@@ -7,7 +7,8 @@ management:
     web:
       exposure:
 #        include: health, prometheus
-        include: "*"
+#        include: "*"
+        include: health, metrics
   endpoint:
     health:
       show-details: always
@@ -18,3 +19,13 @@ management:
       export:
         url: http://localhost:4318/v1/metrics
         step: 10s
+
+
+  metrics:
+    tags:
+      department: ${SERVICE_DEPARTMENT:software}
+      team: ${SERVICE_TEAM:greeting}
+      service: ${spring.application.name}
+      env: ${SERVICE_ENV:dev}
+      region: ${SERVICE_REGION:eu-west-1}
+      instance.id: ${SERVICE_INSTANCE_ID:1}
