@@ -12,21 +12,21 @@ import java.util.UUID;
 @Configuration
 public class MetricsFilterConfig {
 
-    @Bean
-    public MeterFilter commonTagsMeterFilter() {
-        return MeterFilter.commonTags(
-                List.of(
-                        Tag.of(
-                                "instance.uuid",
-                                UUID.randomUUID().toString()
-                        ),
-                        Tag.of(
-                                "zone.id",
-                                ZoneId.of(
-                                        "Europe/Berlin"
-                                ).toString()
-                        )
-                )
-        );
-    }
+//    @Bean
+//    public MeterFilter commonTagsMeterFilter() {
+//        return MeterFilter.commonTags(
+//                List.of(
+//                        Tag.of(
+//                                "instance.uuid",
+//                                UUID.randomUUID().toString()
+//                        ),
+//                        Tag.of(
+//                                "zone.id",
+//                                ZoneId.of(
+//                                        "Europe/Berlin"
+//                                ).toString()
+//                        )
+//                )
+//        );
+//    }
 }
