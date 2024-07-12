@@ -1,8 +1,22 @@
 spring:
   application:
     name:  hello-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/observability
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQLDialect
 
 management:
+  info:
+    env:
+      enabled: true
   endpoints:
     web:
       exposure:
@@ -31,12 +45,3 @@ management:
       maximum-expected-value:
         do.sleep.method.timed: 10s
         http.server.requests: 10s
-
-
-#    tags:
-#      department: ${SERVICE_DEPARTMENT:software}
-#      team: ${SERVICE_TEAM:greeting}
-#      service: ${spring.application.name}
-#      env: ${SERVICE_ENV:dev}
-#      region: ${SERVICE_REGION:europe-west1}
-#      instance.id: ${SERVICE_INSTANCE_ID:dasdasdsadasd}
